@@ -1,11 +1,14 @@
 # BPX Robot Model Assets
 
+English | [简体中文](README.zh-CN.md)
+
 This repository contains open-source robot description assets for the `BPX` platform.
 
-It is intended for developers who need model files for visualization, simulation setup, and integration research.
+It is intended for developers who need model files for mechanical design review, visualization, simulation setup, and integration research.
 
 ## Included Assets
 
+- `step/bpx.STEP`: mechanical CAD assembly model in STEP AP203 format
 - `bpx/urdf/bpx.urdf`: main URDF model entry
 - `bpx/meshes/`: mesh assets referenced by the URDF model
 - `mjcf/bpx.xml`: MuJoCo MJCF model entry
@@ -24,6 +27,8 @@ BPX/
 ├── mjcf/
 │   ├── meshes/
 │   └── bpx.xml
+├── step/
+│   └── bpx.STEP
 └── usd/
     ├── configuration/
     ├── bpx.usd
@@ -31,6 +36,12 @@ BPX/
 ```
 
 ## Quick Start
+
+### STEP (CAD)
+
+Open `step/bpx.STEP` in a STEP-compatible CAD application to inspect the mechanical assembly and measure geometry.
+
+The file header records an export from SolidWorks 2020 on 2026-06-11 in STEP AP203 format. Length units are millimeters.
 
 ### URDF
 
@@ -53,7 +64,7 @@ Keep the `usd/configuration/` directory beside `bpx.usd`, because the main stage
 ## Notes
 
 - Asset paths inside the model files are relative to their current directory layout.
-- Joint limits, collision geometry, and inertial properties are already included in the published model files.
+- Joint limits, collision geometry, and inertial properties are included in the URDF, MJCF, and USD model files.
 - Review compatibility and coordinate conventions in your target toolchain before integration.
 
 ## License And Usage
